@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-int maxElement(const vector<int> &arr)
+int maxElement(const vector<int> arr)
 {
     if (arr.empty())
     {
