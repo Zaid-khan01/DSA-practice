@@ -29,7 +29,7 @@ Node* buildTree(vector<int> pre){
 
 // function for finding height of a tree
 int heightOfTree(Node* root){
-    if(root == NULL) return 0; // backtrack
+    if(root == NULL) return 0; 
 
     int leftHt = heightOfTree(root->left);
     int rightHt = heightOfTree(root->right);
