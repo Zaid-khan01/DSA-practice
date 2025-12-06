@@ -27,7 +27,7 @@ Node* buildTree(vector<int> pre){
     return root;
 }
 
-// function for finding of height a tree
+// function for finding height of a tree
 int heightOfTree(Node* root){
     if(root == NULL) return 0; // backtrack
 
