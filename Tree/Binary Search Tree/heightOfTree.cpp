@@ -1,5 +1,4 @@
 #include<iostream>
-#include<queue>
 #include<vector>
 using namespace std;
 
@@ -28,29 +27,19 @@ Node* buildTree(vector<int> pre){
     return root;
 }
 
-// function for level order traversal
-void levelOrder(Node* root){
-    queue<Node* > q;
-    q.push(root);
+// function for preorder traversal
+void preOrder(Node* root){
+    if(root == NULL) return; // backtrack
 
-    while(q.size()>0){
-        Node* curr = q.front();
-        q.pop();
-
-        cout<<curr->data<<" ";
-        if(curr->left!=NULL){
-            q.push(curr->left);
-        }
-        if(curr->right!=NULL){
-            q.push(curr->right);
-        }
-    }
+    cout<<root->data<<" ";
+    preOrder(root->left); // traverse left subtree
+    preOrder(root->right); // traverse right subtree
 }
 
 int main(int argc, char const *argv[])
 {
     vector<int> pre = {1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1};
     Node* root = buildTree(pre);
-    levelOrder(root);
+    preOrder(root);
     return 0;
 }
