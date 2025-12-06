@@ -27,19 +27,20 @@ Node* buildTree(vector<int> pre){
     return root;
 }
 
-// function for preorder traversal
-void preOrder(Node* root){
-    if(root == NULL) return; // backtrack
+// function for finding of height a tree
+int heightOfTree(Node* root){
+    if(root == NULL) return 0; // backtrack
 
-    cout<<root->data<<" ";
-    preOrder(root->left); // traverse left subtree
-    preOrder(root->right); // traverse right subtree
+    int leftHt = heightOfTree(root->left);
+    int rightHt = heightOfTree(root->right);
+
+    return max(leftHt, rightHt)+1;
 }
 
 int main(int argc, char const *argv[])
 {
     vector<int> pre = {1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1};
     Node* root = buildTree(pre);
-    preOrder(root);
+    cout<<"Height of a tree is = "<<heightOfTree(root);
     return 0;
 }
