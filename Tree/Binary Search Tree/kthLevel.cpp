@@ -27,7 +27,7 @@ Node* buildTree(vector<int> pre){
     return root;
 }
 
-// function for preorder traversal
+// function for finding nodes at kth level
 void kthLevel(Node* root, int k){
     if(root == NULL) return; // backtrack
 
